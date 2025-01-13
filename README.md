@@ -5,6 +5,7 @@ Answer: Empoleon
 
 # Notes for 1/13/25
 made a codespace for c++ programming class, pick theme, cover commit, and sync (push)
+and now we sync?
 
 todo: look at the public website to see the changes. 
 
