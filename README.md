@@ -12,5 +12,11 @@ collaborators:
 Chayse - Pikachu
 Mikayla - Snorlax
 
-todo: look at the public website to see the changes. 
+todo: look at the public website to see the changes.
+
+# Notes for 1/15/2025
+made a public profile for github
+
+learned how to re enter the codespace
+
 
