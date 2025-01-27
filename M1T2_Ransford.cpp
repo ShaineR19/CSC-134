@@ -11,5 +11,6 @@ int main()
   cout << "Hello World!\n";
   string name = "Shaine Ransford";
   cout << "Nice to meet you, " << name << endl;
-  cout << "I am a programming student enrolled at FTCC"<< endl;
+  cout << "I am a programming student enrolled at FTCC" << endl;
+  cout << "My favorite sport to watch is football and I'm excited for the Superbowl." << endl;
 }
