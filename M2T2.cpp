@@ -25,6 +25,7 @@ int main()
     total = tax_amount + meal_price;
 
     // Output
+    cout << "Thanks for dining with us, here is your receipt!"<< endl;
     cout << setprecision(2)<< fixed 
          << "Price: "<< meal_price<< endl
          << "  Tax: "<< tax_amount<< endl
