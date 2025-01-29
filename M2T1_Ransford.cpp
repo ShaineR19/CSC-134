@@ -15,7 +15,7 @@ string user_name;
 
 // number of apples owned
 int apples = 100;
-
+int apples_wanted;
 // price per apple
 double pricePerApple = 0.25;
 
@@ -25,13 +25,20 @@ double totalPrice = apples * pricePerApple;
 // Welcome user
 cout << "Hello, what's your name? "<< endl;
 cin >> user_name;
-cout << "Thanks for coming by "<< user_name << "!"<< endl;
 
 // print all the information about the orchard
-cout << "Welcome to " << farm_name << "’s apple orchard." << endl
+cout << "Welcome to " << farm_name << "’s apple orchard " << user_name<< '.'<< endl
      << "We have " << apples << " apples in stock" << endl
      << "Apples are currently $" << pricePerApple << " each." << endl;
 
 // Final line, to print totalPrice
-cout << "If you want them all, that will be $" << totalPrice << endl;
+cout << "How many apples would you like? "<< endl;
+cin >> apples_wanted;
+
+// Calculate user total
+double total = apples_wanted * pricePerApple;
+
+// Display to user
+cout<< "Your total for "<< apples_wanted<< ", is $"<< total<< "."<< endl;
+cout<< "Have a great day!"<< endl;
 }
