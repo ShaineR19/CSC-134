@@ -6,6 +6,7 @@
 
 #include <iostream> 
 #include <iomanip>
+//#include <format>
 using namespace std;
 
 int main()
@@ -19,16 +20,26 @@ int main()
     const double tax = 0.08;
     double meal_price = 5.99;
     double total;
-
+    string food = "burger";
+    string place = "In-N-Out";
+    string dash23 = "---------------------";
     // Calculations
     double tax_amount = meal_price * tax;
     total = tax_amount + meal_price;
 
     // Output
+    cout << "Welcome to "<<place<<"!!"<< endl;
+    //cout << format("Your {food} will cost {meal_price}.")<< endl;
+    cout << "Your "<<food<< " will cost " <<meal_price<<"."<< endl;
     cout << "Thanks for dining with us, here is your receipt!"<< endl;
+    cout << endl;
+
+    cout << "RECEIPT"<< endl;
+    cout << dash23 << endl;
     cout << setprecision(2)<< fixed 
-         << "Price: "<< meal_price<< endl
-         << "  Tax: "<< tax_amount<< endl
-         << "Total: "<< total<< endl;
+         << "SUBTOTAL:\t$"<<meal_price<< endl
+         << "TAX:\t\t$"<<tax_amount<< endl
+         << dash23 << endl
+         << "TOTAL:\t\t$"<<total<< endl;
           
 }

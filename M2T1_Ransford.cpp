@@ -27,7 +27,7 @@ cout << "Hello, what's your name? "<< endl;
 cin >> user_name;
 
 // print all the information about the orchard
-cout << "Welcome to " << farm_name << "’s apple orchard " << user_name<< '.'<< endl
+cout << "Welcome to " << farm_name << "’s Apple Orchard " << user_name<< '.'<< endl
      << "We have " << apples << " apples in stock" << endl
      << "Apples are currently $" << pricePerApple << " each." << endl;
 
