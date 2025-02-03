@@ -6,7 +6,6 @@
 
 #include <iostream> 
 #include <iomanip>
-//#include <format>
 using namespace std;
 
 int main()
@@ -29,7 +28,6 @@ int main()
 
     // Output
     cout << "Welcome to "<<place<<"!!"<< endl;
-    //cout << format("Your {food} will cost {meal_price}.")<< endl;
     cout << "Your "<<food<< " will cost " <<meal_price<<"."<< endl;
     cout << "Thanks for dining with us, here is your receipt!"<< endl;
     cout << endl;
