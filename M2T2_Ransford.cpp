@@ -16,28 +16,31 @@ int main()
     // Display the total to the user.
 
     // Variables
-    const double tax = 0.08;
+    const double TAX = 0.08;
     double meal_price = 5.99;
     double total;
     string food = "burger";
     string place = "In-N-Out";
-    string dash23 = "---------------------";
+    string dash24 = "----------------------";
+
     // Calculations
-    double tax_amount = meal_price * tax;
+    double tax_amount = meal_price * TAX;
     total = tax_amount + meal_price;
 
     // Output
-    cout << "Welcome to "<<place<<"!!"<< endl;
-    cout << "Your "<<food<< " will cost " <<meal_price<<"."<< endl;
-    cout << "Thanks for dining with us, here is your receipt!"<< endl;
-    cout << endl;
+    cout << "Welcome to "<< place <<"!!"<< endl
+         << "Your "<< food <<" will cost "<< meal_price <<"."<< endl
+         << "Thanks for dining with us, here is your receipt!"<< endl
+         << endl
 
-    cout << "RECEIPT"<< endl;
-    cout << dash23 << endl;
-    cout << setprecision(2)<< fixed 
-         << "SUBTOTAL:\t$"<<meal_price<< endl
-         << "TAX:\t\t$"<<tax_amount<< endl
-         << dash23 << endl
-         << "TOTAL:\t\t$"<<total<< endl;
+         << "RECEIPT"<< endl
+         << dash24 << endl
+
+         << setprecision(2)<< fixed 
+         << "SUBTOTAL:\t$"<< meal_price << endl
+         << "TAX:\t\t$"<< tax_amount << endl
+
+         << dash24 << endl
+         << "TOTAL:\t\t$"<< total << endl;
           
 }
