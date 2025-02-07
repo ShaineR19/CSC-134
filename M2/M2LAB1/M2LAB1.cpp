@@ -19,7 +19,7 @@ int main()
             volume, // The volume of the crate
             cost,   // The cost to build the crate
             charge, // The customer charge for the crate
-            profit, // The profit made on the crate
+            profit; // The profit made on the crate
 
     // Set the desired output formatting for numbers.
     cout << setprecision(2) << fixed << showpoint; 
