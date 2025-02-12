@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() 
-{
+{// Question 1
     cout << "Question 1"<< endl;
     cout << "" << endl;
     // Variables
@@ -50,5 +50,44 @@ int main()
 
         // Final Account Balance
         cout << "Balance: $" << balance << endl;
+        cout << "" << endl;
 
+    // Question 2
+    cout << "Question 2"<< endl;
+    cout << "" << endl;
+
+    // Question 3
+    cout << "Question 3"<< endl;
+    cout << "" << endl;
+        // Variables
+        int people = 0;
+        cout << "How many people are coming to your party?"<< endl;
+        cin >> people;
+
+        int pizza = 0;
+        cout << "How many pizzas did your order?"<< endl;
+        cin >> pizza;
+
+        int slices = 0;
+        cout << "How many slices per pizza?"<< endl;
+        cin >> slices;
+        // Processing
+
+        // Output
+
+
+    // Question 4
+    cout << "Question 4"<< endl;
+    cout << "" << endl;
+
+        // Variables
+        string cheer = "Let's go ";
+        string school = "FTCC";
+        string team = "Trojans";
+
+        // Output
+        cout << cheer << school << endl;
+        cout << cheer << school << endl;
+        cout << cheer << school << endl;
+        cout << cheer << team << endl;
 }
