@@ -55,11 +55,18 @@ int main()
     // Question 2
     cout << "Question 2"<< endl;
     cout << "" << endl;
+    // Variables
+
+    // Calculations
+
+    // Ouput
+    cout << "" << endl;
 
     // Question 3
+    // Pizzas
     cout << "Question 3"<< endl;
     cout << "" << endl;
-        // Variables
+    // Variables
         int people = 0;
         cout << "How many people are coming to your party?"<< endl;
         cin >> people;
@@ -71,23 +78,40 @@ int main()
         int slices = 0;
         cout << "How many slices per pizza?"<< endl;
         cin >> slices;
-        // Processing
 
-        // Output
+    // Processing
+        int slices_needed = people * 3;
+        int total_slices = pizza * slices;
+        int slice_count = slices_needed - total_slices;
 
-
+    // Output
+        if (slice_count > 0)
+        {
+            cout << "You need " << abs(slice_count) << " more slices.";
+        }
+        else
+        {
+            cout << "You have "<< slice_count <<" slices left.";
+        }
+    
     // Question 4
+    // Strings
+    cout << "" << endl;
     cout << "Question 4"<< endl;
     cout << "" << endl;
 
-        // Variables
+    // Variables
         string cheer = "Let's go ";
         string school = "FTCC";
         string team = "Trojans";
+    
+    // Calculations
+        string cheerOne = cheer + school;
+        string cheerTwo = cheer + team;
 
-        // Output
-        cout << cheer << school << endl;
-        cout << cheer << school << endl;
-        cout << cheer << school << endl;
-        cout << cheer << team << endl;
+    // Output
+        cout << cheerOne << endl;
+        cout << cheerOne << endl;
+        cout << cheerOne << endl;
+        cout << cheerTwo << endl;
 }
