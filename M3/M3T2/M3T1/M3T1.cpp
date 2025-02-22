@@ -2,7 +2,7 @@
 // M1LAB
 // Shaine Ransford
 // 1/27/2025
-// This program will print a receipt for a transaction
+// This program will print 2 rectangles area
 
 #include <iostream> 
 #include <iomanip>
