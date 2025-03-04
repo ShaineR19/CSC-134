@@ -1,6 +1,6 @@
 // Shaine Ransford
 // 2/24/2025
-// M3T3
+// M3Lab2
 // CSC-134
 
 #include <iostream>
