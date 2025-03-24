@@ -10,7 +10,7 @@ using namespace std;
 
 int main() 
 {
-    // Loop, user input variable are set before the while loop so they are not iterated over twice
+    // Loop, user input variable are set before the while loop so they are not iterated over
     int number;
     bool invalid = true;
 
@@ -36,7 +36,7 @@ int main()
         }
     }
 
-    // Counter, table_size variable are set before the while loop so they are not iterated over twice
+    // Counter, table_size variable are set before the while loop so they are not iterated over
     int count = 1;
     int table_size = 12;
 
