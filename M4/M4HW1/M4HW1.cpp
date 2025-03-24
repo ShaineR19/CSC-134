@@ -1,6 +1,6 @@
 // Shaine Ransford
 // 2/24/2025
-// M4Lab1
+// M4HW1 - Gold
 // CSC-134
 
 #include <iostream>
