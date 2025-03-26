@@ -10,6 +10,7 @@ using namespace std;
 int main() 
 {
     char orange[] = "World";
+    char *apple = "World";
     float pear = 5.932671298;
     int peach = 150;
 
