@@ -9,5 +9,9 @@ using namespace std;
 
 int main()
 {
-    printf("Hello");
+    printf("Welcome to the Game of Life");
+
+    
+    char input[] = "";
+    cin>> input;
 }
