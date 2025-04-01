@@ -11,8 +11,8 @@ int main()
 {   
     //M4Lab1
     // Variables
-    int width = 10;
-    int height = 10;
+    int width = 2;
+    int height = 2;
 
     // Calculations/Output
     for (int i=0; i < width; i++) 
@@ -23,9 +23,7 @@ int main()
         }
         cout << endl;
     }
-
     cout<< endl;
-    recursive_asterisk(height, width);
 
     return 0;
 }
