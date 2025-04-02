@@ -21,8 +21,8 @@ int main()
 {
 	// This program calculates the area of a rectangle.
     double length,    // The rectangle's length
-          width,     // The rectangle's width
-          area;      // The rectangle's area
+           width,     // The rectangle's width
+           area;      // The rectangle's area
           
     // Get the rectangle's length.
     length = getLength();
