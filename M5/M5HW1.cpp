@@ -9,8 +9,14 @@ using namespace std;
 
 // Functions
 void menu();
+
 void rainfall();
+
 void hyperRectangle();
+double getLength(double length);
+double getWidth(double width);
+double getHeight(double height);
+
 void romanNumeral();
 void shapeCalculator();
 void distanceTraveled();
@@ -76,6 +82,7 @@ void rainfall()
 {
     string month;
     string months[3];
+
     double rainfall, 
            count, 
            average;
@@ -101,7 +108,69 @@ void rainfall()
 
 void hyperRectangle()
 {
-    cout<< "hello world";
+    double length,
+           height,
+           width,
+           volume;
+
+    length = getLength(length);
+    width = getWidth(width);
+    height = getHeight(height);
+
+    volume = length, width, height;
+    cout<< "\nVolume: "<< volume;
+}
+
+double getLength(double length)
+{
+    bool go = true;
+    while (go)
+    {
+        cout<< "\nEnter the length of the Hyper Rectangle: ";
+        cin >> length;
+
+        if (length > 0)
+        {
+            go = false;
+        }
+        else
+        {
+            cout << "Error! Enter a number above 0.\n";
+        }
+    }
+    return length;
+}
+
+double getWidth(double width)
+{
+    
+    cout<< "\nEnter the width of the Hyper Rectangle: ";
+    cin >> width;
+
+    if (width > 0)
+    {
+        return width;
+    }
+    else 
+    {
+        width = getWidth(width);
+    }
+}
+
+double getHeight(double height)
+{
+    cout<< "\nEnter the height of the Hyper Rectangle: ";
+    cin >> height;
+
+    if (height <= 0)
+    {
+        return height;
+    }
+    else 
+    {
+        height = getWidth(height);
+
+    }
 }
 
 void romanNumeral()
