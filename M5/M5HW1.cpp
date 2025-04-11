@@ -18,7 +18,13 @@ double getWidth();
 double getHeight();
 
 void romanNumeral();
+
 void shapeCalculator();
+void shape_menu();
+void circle_area();
+void rectangle_area();
+void triangle_area();
+
 void distanceTraveled();
 
 
@@ -122,7 +128,7 @@ double getLength()
     bool go = true;
     while (go)
     {
-        cout<< "\nEnter the length of the Hyper Rectangle: ";
+        cout<< "\nEnter the length of the Rectangle: ";
         cin >> length;
 
         if (length > 0)
@@ -143,7 +149,7 @@ double getWidth()
     bool go = true;
     while (go)
     {
-        cout<< "\nEnter the width of the Hyper Rectangle: ";
+        cout<< "\nEnter the width of the Rectangle: ";
         cin >> width;
 
         if (width > 0)
@@ -164,7 +170,7 @@ double getHeight()
     bool go = true;
     while (go)
     {
-        cout<< "\nEnter the height of the Hyper Rectangle: ";
+        cout<< "\nEnter the height of the Rectangle: ";
         cin >> height;
 
         if (height > 0)
@@ -216,7 +222,108 @@ void romanNumeral()
 
 void shapeCalculator()
 {
-    cout<< "hello world";
+    string choice;
+    bool go = true;
+
+    while(go)
+    {
+        shape_menu();
+        cout << "Enter a menu option: ";
+        cin >> choice;
+
+        if (choice == "1")
+        {
+            circle_area();
+        }
+        else if (choice == "2")
+        {
+            rectangle_area();
+        }
+        else if (choice == "3")
+        {
+            triangle_area();
+        }
+        else if (choice == "4")
+        {
+            cout << "Returning to Main Menu...\n";
+            return;
+        }
+        else
+        {
+            cout << "ERROR: Option not available. Try again\n";
+        }
+    }
+}
+
+void shape_menu()
+{
+    cout << "\nShape Menu\n";
+    cout << "1) Calculate the Area of a Circle\n";
+    cout << "2) Calculate the Area of a Rectangle\n";
+    cout << "3) Calculate the Area of a Triangle\n";
+    cout << "4) Exit\n";
+}
+
+void circle_area()
+{
+    double radius;
+    double area;
+
+    cout << "\nWhat is the radius of your circle: ";
+    cin >> radius;
+
+    if (radius <= 0)
+    {
+        cout << "Radius cannot be negative.";
+        return;
+    }
+    else if (radius > 0)
+    {
+        area = 3.14 * (radius * radius);
+        cout << "Circle Area is " << area << ".\n";
+        return;
+    }
+}
+
+void rectangle_area()
+{
+    double length = getLength();
+    double width = getWidth();
+    double area = length * width;
+    
+    cout << "Rectangle Area is " << area << ".\n";
+    return;
+}
+
+void triangle_area()
+{
+    double height;
+    double base;
+
+    cout << "\nWhat is the height of your triangle: ";
+    cin >> height;
+    if (height <= 0)
+    {
+        cout << "Height cannot be negative.\n";
+        return;
+    }
+    else if (height > 0)
+    {
+        cout << "\nWhat is the base of your triangle: ";
+        cin >> base;
+
+        if (base <= 0)
+        {
+            cout << "Base cannot be negative.\n";
+            return;
+        }
+        else if (base > 0)
+        {
+            double area = (height * base) / 2;
+            cout << "Triangle Area is " << area << ".\n";
+        }
+    }
+    return;
 }
 
 void distanceTraveled()
