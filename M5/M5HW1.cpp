@@ -13,9 +13,9 @@ void menu();
 void rainfall();
 
 void hyperRectangle();
-double getLength(double length);
-double getWidth(double width);
-double getHeight(double height);
+double getLength();
+double getWidth();
+double getHeight();
 
 void romanNumeral();
 void shapeCalculator();
@@ -108,21 +108,17 @@ void rainfall()
 
 void hyperRectangle()
 {
-    double length,
-           height,
-           width,
-           volume;
+    double length = getLength();
+    double width = getWidth();
+    double height = getHeight();
 
-    length = getLength(length);
-    width = getWidth(width);
-    height = getHeight(height);
-
-    volume = length, width, height;
-    cout<< "\nVolume: "<< volume;
+    double volume = length * width * height;
+    cout<< "\nVolume: "<< volume << endl;
 }
 
-double getLength(double length)
+double getLength()
 {
+    double length;
     bool go = true;
     while (go)
     {
@@ -141,41 +137,81 @@ double getLength(double length)
     return length;
 }
 
-double getWidth(double width)
+double getWidth()
 {
-    
-    cout<< "\nEnter the width of the Hyper Rectangle: ";
-    cin >> width;
+    double width;
+    bool go = true;
+    while (go)
+    {
+        cout<< "\nEnter the width of the Hyper Rectangle: ";
+        cin >> width;
 
-    if (width > 0)
-    {
-        return width;
+        if (width > 0)
+        {
+            go = false;
+        }
+        else 
+        {
+            cout << "Error! Enter a number above 0.\n";
+        }
     }
-    else 
-    {
-        width = getWidth(width);
-    }
+    return width;
 }
 
-double getHeight(double height)
+double getHeight()
 {
-    cout<< "\nEnter the height of the Hyper Rectangle: ";
-    cin >> height;
-
-    if (height <= 0)
+    double height;
+    bool go = true;
+    while (go)
     {
-        return height;
-    }
-    else 
-    {
-        height = getWidth(height);
+        cout<< "\nEnter the height of the Hyper Rectangle: ";
+        cin >> height;
 
+        if (height > 0)
+        {
+            go = false;
+        }
+        else
+        {
+            cout << "Error! Enter a number above 0.\n";
+        }
     }
+    return height;
 }
 
 void romanNumeral()
 {
-    cout<< "hello world";
+    int num;
+    bool go = true;
+
+    while(go)
+    {
+        cout<< "\nEnter a number between 1-10: ";
+        cin >> num;
+        if (num > 10 || num < 1)
+        {
+            cout << "ERROR: Number out of bounds\n";
+        }
+        else
+        {
+            cout << "The Roman numeral version of "<< num << " is: ";
+            switch (num)
+            {
+                case 1: cout << "I"; break;
+                case 2: cout << "II"; break;
+                case 3: cout << "III"; break;
+                case 4: cout << "IV"; break;
+                case 5: cout << "V"; break;
+                case 6: cout << "VI"; break;
+                case 7: cout << "VII"; break;
+                case 8: cout << "VII"; break;
+                case 9: cout << "IX"; break;
+                case 10: cout << "X"; break;
+            }
+            cout << ".\n";
+            go = false;
+        }
+    }
 }
 
 void shapeCalculator()
