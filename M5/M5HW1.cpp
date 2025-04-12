@@ -26,6 +26,8 @@ void rectangle_area();
 void triangle_area();
 
 void distanceTraveled();
+double getSpeed();
+int getHours();
 
 
 // Main
@@ -328,5 +330,59 @@ void triangle_area()
 
 void distanceTraveled()
 {
-    cout<< "hello world";
+    bool go = true;
+
+    double speed = getSpeed();
+    int hours = getHours();
+    cout << "Hour   |Distance Traveled\n";
+    cout << "-------------------------\n";
+    for (int i = 1; i <= hours; i++)
+    {
+        double distance = i * speed;
+        cout << i <<"       "<< distance << endl;
+    }
+}
+
+double getSpeed()
+{
+    double speed;
+    bool go = true;
+    
+    while (go)
+    {
+        cout << "\nWhat is the speed of the vehicle in MPH: ";
+        cin >> speed;
+
+        if (speed < 0)
+        {
+            cout << "ERROR: Speed cannot be negative.";
+        }
+        else
+        {
+            go = false;
+        }
+    }
+    return speed;
+}
+
+int getHours()
+{
+    int hours;
+    bool go = true;
+
+    while (go)
+    {
+        cout << "\nHow many hours has it traveled: ";
+        cin >> hours;
+
+        if (hours < 1)
+        {
+            cout << "ERROR: Hours cannot be negative.";
+        }
+        else
+        {
+            go = false;
+        }
+    }
+    return hours;
 }
