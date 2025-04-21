@@ -3,6 +3,7 @@
         "iostream": "cpp",
         "type_traits": "cpp",
         "ostream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "algorithm": "cpp"
     }
 }
