@@ -52,7 +52,7 @@ int main()
         cout << "You shot at target " << target << ".\n";
         if (shells[chamberIndex] == 1)
         {
-            cout << "You hit the target!\n";
+            cout << "The Shell was Live!\n";
             targetHits[target - 1]++; // Increment the hit count for the chosen target
             if (targetHits[target -1] == 2)
             {
@@ -62,7 +62,7 @@ int main()
         }
         else
         {
-            cout << "You missed the target!\n";
+            cout << "Shell was a Blank!\n";
         }
         chamberIndex++;
 
@@ -73,7 +73,7 @@ int main()
         cout << "Dealer shot at target " << dealerTarget << ".\n";
         if (shells[chamberIndex] == 1)
         {
-            cout << "Dealer hit the target!\n";
+            cout << "The Shell was Live!\n";
             targetHits[dealerTarget - 1]++; // Increment the hit count for the chosen target
             if (targetHits[dealerTarget -1] == 2)
             {
@@ -83,7 +83,7 @@ int main()
         }
         else
         {
-            cout << "Dealer missed the target!\n";
+            cout << "The Shell was Blank!\n";
         }
         chamberIndex++;
         roundNum++;
