@@ -1,7 +1,7 @@
 #include <iostream>
-#include "player.h"
-#include "enemy.h"
-#include "item.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Item.h"
 
 int main() {
     Player player("Artemis");

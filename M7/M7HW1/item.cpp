@@ -1,4 +1,4 @@
-#include "item.h"
+#include "Item.h"
 
 Item::Item(std::string itemName, std::string itemType, int itemPower)
     : name(itemName), type(itemType), power(itemPower) {}

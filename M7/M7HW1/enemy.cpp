@@ -1,4 +1,4 @@
-#include "enemy.h"
+#include "Enemy.h"
 #include <iostream>
 
 Enemy::Enemy(std::string enemyType, int hp, int atk, int def)
