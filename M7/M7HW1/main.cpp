@@ -21,7 +21,7 @@ int main()
         std::cout <<"\n"<< goblin.getType() << " HP: " << goblin.getHealth() << "\n";
 
         std::string choice;
-        std::cout << "\nChoose action: (attack / use potion): ";
+        std::cout << "\nChoose action: (attack / potion): ";
         std::cin >> choice;
         std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
 
@@ -29,7 +29,7 @@ int main()
         {
             goblin.takeDamage(player.getAttack());
         } 
-        else if (choice == "use") 
+        else if (choice == "potion") 
         {
             std::cin.ignore(); // flush newline from previous input
             std::string itemName;
