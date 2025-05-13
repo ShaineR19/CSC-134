@@ -48,7 +48,7 @@ void outsideMenu(Player& player)
         std::cout << "Choose an option: ";
         std::getline(std::cin, choice);
         std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
-        
+
         if (choice == "1" || choice == "merchant") 
         {
             merchantMenu(player);
@@ -143,15 +143,18 @@ void insideMenu(Player& player)
                 std::cout <<"\n"<< goblin.getType() << " HP: " << goblin.getHealth() << "\n";
 
                 std::string choice;
-                std::cout << "\nChoose action: (attack / potion): ";
-                std::cin >> choice;
+                std::cout << "\nBattle Menu:";
+                std::cout << "\n1. attack";
+                std::cout << "\n2. potion";
+                std::cout << "\nChoose an action: ";
+                std::getline(std::cin, choice);
                 std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
 
-                if (choice == "attack") 
+                if (choice == "1" || choice == "attack") 
                 {
                     goblin.takeDamage(player.getAttack());
                 } 
-                else if (choice == "potion") 
+                else if (choice == "2" || choice == "potion") 
                 {
                     std::cin.ignore(); // flush newline from previous input
                     std::string itemName;
