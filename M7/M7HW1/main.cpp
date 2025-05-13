@@ -40,18 +40,22 @@ void outsideMenu(Player& player)
     bool outside = true;
     while (outside)
     {
-        std::cout << "\nYou are outside of the dungeon, would you like to go to the merchant or go straight to the dungeon\n";
+        std::cout << "\nYou are outside of the dungeon.\n";
+        std::cout << "1. Merchant\n";
+        std::cout << "2. Dungeon\n";
+
         std::string choice;
-        std::cout << "Enter 'merchant' or 'dungeon': ";
+        std::cout << "Choose an option: ";
         std::getline(std::cin, choice);
         std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
-        if (choice == "merchant") 
+        
+        if (choice == "1" || choice == "merchant") 
         {
             merchantMenu(player);
         } 
-        else if (choice == "dungeon") 
+        else if (choice == "2" || choice == "dungeon") 
         {
-            std::cout << "You have chosen to go straight to the dungeon.\n";
+            std::cout << "You have chosen to go to the dungeon.\n";
             outside = false; // Exit the loop to enter the dungeon
         } 
         else 
@@ -68,20 +72,30 @@ void merchantMenu(Player& player)
     {
         std::cout << "\nPiney - Welcome Adventurer!\n";
         std::cout << "Piney the Merchant:\n";
-        std::cout << "1. Healing Potion / 20g\n";
-        std::cout << "You have "<< player.getMoney()<<" gold.\n";
-        std::cout << "Would you like to buy the potion? (yes/no): ";
-        std::string buyChoice;
-        std::getline(std::cin, buyChoice);
-        std::transform(buyChoice.begin(), buyChoice.end(), buyChoice.begin(), ::tolower);
-        if (buyChoice == "yes") 
+        std::cout << "1. healing potion / 20g\n";
+        std::cout << "2. leave\n";
+        std::cout << "\nPlayer: "<< player.getMoney()<<"g\n";
+
+        std::cout << "Choose an option: ";
+        std::string merchantChoice;
+        std::getline(std::cin, merchantChoice);
+        std::transform(merchantChoice.begin(), merchantChoice.end(), merchantChoice.begin(), ::tolower);
+
+        // subtract money from player here
+        if (merchantChoice == "1" || merchantChoice == "healing potion") 
         {
             player.addItem(Item("Healing Potion", "potion", 20));
             std::cout << "You bought a healing potion!\n";
         } 
+        else if (merchantChoice == "2" || merchantChoice == "leave")
+        {
+            std::cout << "You leave the merchant\n";
+            trade = false; // Exit the loop
+        }
         else 
         {
-            std::cout << "You chose not to buy the potion.\n";
+            std::cout << "Invalid choice.\n";
+            continue; // Skip to the next iteration
         }
     }
 }
@@ -92,7 +106,6 @@ void insideMenu(Player& player)
     while (inside) 
     {
         // Display Menu
-        std::cout << "\nYou are in the dungeon.";
         std::cout << "\nDungeon Menu:";
         std::cout << "\n1. explore";
         std::cout << "\n2. inventory";
@@ -111,7 +124,18 @@ void insideMenu(Player& player)
             Enemy goblin("Goblin", 30, 8, 2);
             
             std::cout << "\nA wild " << goblin.getType() << " appears!\n";
-
+            std::cout << R"(
+      ,      ,
+     /(.-""-.)\
+|\   \/      \/  /|
+| \  / =.  .= \ / |
+ \(  \  o\/o  / )/
+  \_, '-/  \-' ,_/
+    /   \__/   \
+    \ \__/\__/ /
+  ___\ \|--|/ /___
+/`    \      /    `\
+)";
             while (player.isAlive() && goblin.isAlive()) 
             {
                 std::cout << "\n-- Player Turn --\n";
