@@ -4,7 +4,8 @@
 #include "Enemy.h"
 #include "Item.h"
 
-int main() {
+int main() 
+{
     Player player("Artemis");
     Enemy goblin("Goblin", 30, 8, 2);
 
@@ -43,9 +44,12 @@ int main() {
         player.takeDamage(goblin.getAttack());
     }
 
-    if (player.isAlive()) {
+    if (player.isAlive()) 
+    {
         std::cout << "\nYou defeated the " << goblin.getType() << "!\n";
-    } else {
+    } 
+    else 
+    {
         std::cout << "\nYou were defeated in battle...\n";
     }
 
