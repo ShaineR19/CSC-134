@@ -8,12 +8,14 @@ Player::Player(std::string playerName)
     health = maxHealth;
     attack = 10;
     defense = 10;
+    money = 100;
 }
 
 std::string Player::getName() const { return name; }
 int Player::getHealth() const { return health; }
 int Player::getAttack() const { return attack; }
 int Player::getDefense() const { return defense; }
+int Player::getMoney() const { return money; }
 
 void Player::takeDamage(int amount) 
 {

@@ -12,6 +12,7 @@ private:
     int maxHealth;
     int attack;
     int defense;
+    int money;
     std::vector<Item> inventory;
 
 public:
@@ -22,6 +23,7 @@ public:
     int getHealth() const;
     int getAttack() const;
     int getDefense() const;
+    int getMoney() const;
 
     // Core methods
     void takeDamage(int amount);
