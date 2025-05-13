@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "Player.h"
 #include "Enemy.h"
 #include "Item.h"
@@ -12,19 +13,26 @@ int main() {
 
     std::cout << "\nA wild " << goblin.getType() << " appears!\n";
 
-    while (player.isAlive() && goblin.isAlive()) {
+    while (player.isAlive() && goblin.isAlive()) 
+    {
         std::cout << "\n-- Player Turn --\n";
         player.displayStats();
+        std::cout << goblin.getType() << " HP: " << goblin.getHealth() << "\n";
 
         std::string choice;
         std::cout << "Choose action: (attack / use potion): ";
         std::cin >> choice;
+        std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
 
-        if (choice == "attack") {
+        if (choice == "attack") 
+        {
             goblin.takeDamage(player.getAttack());
-        } else if (choice == "use") {
+        } 
+        else if (choice == "use") 
+        {
+            std::cin.ignore(); // flush newline from previous input
             std::string itemName;
-            std::cin.ignore();
+            std::cout << "Enter item name to use: ";
             std::getline(std::cin, itemName);
             player.useItem(itemName);
         }
