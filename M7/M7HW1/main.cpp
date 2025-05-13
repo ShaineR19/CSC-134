@@ -160,7 +160,6 @@ void insideMenu(Player& player)
         else if (dungeonChoice == "3" || dungeonChoice == "leave") 
         {
             std::cout << "\nYou exit the dungeon.\n";
-            outside = true; // Set outside to true to go back to the main menu
             inside = false; // Exit the dungeon loop
         } 
         else 
@@ -169,4 +168,5 @@ void insideMenu(Player& player)
             continue; // Skip to the next iteration  
         }
     }
+    return;
 }
