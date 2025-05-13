@@ -18,7 +18,11 @@ int main()
     std::transform(playerName.begin(), playerName.end(), playerName.begin(), ::tolower);
     Player player(playerName);
 
-    std::cout << "Welcome to the Dungeon Divers!\n";
+    // Create Enemies
+    Enemy goblin("Goblin", 30, 8, 2);
+
+    // Start game
+    std::cout << "\nWelcome to the Dungeon Divers!\n";
     std::cout << "You are outside of the dungeon, would you like to go to the merchant or go straight to the dungeon\n";
     std::string choice;
     std::cout << "Enter 'merchant' or 'dungeon': ";
@@ -26,10 +30,10 @@ int main()
     std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
     if (choice == "merchant") 
     {
-        std::cout << "Welcome Adventurer!\n";
+        std::cout << "\nPiney - 'Welcome Adventurer!'\n";
         std::cout << "Piney the Merchant:\n";
         std::cout << "1. Healing Potion / 20g\n";
-        std::cout << "You have 100 gold.\n";
+        std::cout << "You have "<< player.getMoney()<<" gold.\n";
         std::cout << "Would you like to buy the potion? (yes/no): ";
         std::string buyChoice;
         std::getline(std::cin, buyChoice);
@@ -54,8 +58,6 @@ int main()
         return 1;
     }
 
-    // Enemy types
-    Enemy goblin("Goblin", 30, 8, 2);
 
     Item potion("Healing Potion", "potion", 20);
     player.addItem(potion);
