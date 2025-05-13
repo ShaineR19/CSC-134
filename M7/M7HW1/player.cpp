@@ -40,7 +40,7 @@ bool Player::isAlive() const
 void Player::addItem(const Item& item) 
 {
     inventory.push_back(item);
-    std::cout << name << " found: " << item.getName() << "\n";
+    //std::cout << name << " found: " << item.getName() << "\n";
 }
 
 void Player::useItem(std::string itemName)
