@@ -1,3 +1,8 @@
+// Shaine Ransford
+// 5/13/2025
+// M7HW1
+// CSC-134
+
 #include <iostream>
 #include <algorithm>
 #include "Player.h"
@@ -6,7 +11,17 @@
 
 int main() 
 {
-    Player player("Artemis");
+    // Create a player
+    std::string playerName;
+    std::cout << "Enter your character's name: ";
+    std::getline(std::cin, playerName);
+    std::transform(playerName.begin(), playerName.end(), playerName.begin(), ::tolower);
+    Player player(playerName);
+
+    std::cout << "Welcome to the Dungeon Divers!\n";
+    std::cout << "You are outside of the dungeon, would you like to go to the merchant or go straight to the dungeon\n";
+
+    // Enemy types
     Enemy goblin("Goblin", 30, 8, 2);
 
     Item potion("Healing Potion", "potion", 20);

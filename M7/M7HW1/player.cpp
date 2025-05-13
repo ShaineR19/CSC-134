@@ -4,10 +4,10 @@
 Player::Player(std::string playerName) 
 {
     name = playerName;
-    maxHealth = 100;
+    maxHealth = 10;
     health = maxHealth;
     attack = 10;
-    defense = 5;
+    defense = 10;
 }
 
 std::string Player::getName() const { return name; }
@@ -30,11 +30,13 @@ void Player::heal(int amount)
     std::cout << name << " heals for " << amount << " HP.\n";
 }
 
-bool Player::isAlive() const {
+bool Player::isAlive() const 
+{
     return health > 0;
 }
 
-void Player::addItem(const Item& item) {
+void Player::addItem(const Item& item) 
+{
     inventory.push_back(item);
     std::cout << name << " found: " << item.getName() << "\n";
 }
