@@ -18,10 +18,10 @@ int main()
     {
         std::cout << "\n-- Player Turn --\n";
         player.displayStats();
-        std::cout << goblin.getType() << " HP: " << goblin.getHealth() << "\n";
+        std::cout <<"\n"<< goblin.getType() << " HP: " << goblin.getHealth() << "\n";
 
         std::string choice;
-        std::cout << "Choose action: (attack / use potion): ";
+        std::cout << "\nChoose action: (attack / use potion): ";
         std::cin >> choice;
         std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
 
