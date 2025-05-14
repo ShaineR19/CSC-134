@@ -55,15 +55,17 @@ void outsideMenu(Player& player)
     bool outside = true;
     while (outside)
     {
+        // Display Menu
         std::cout << "\nYou are outside of the dungeon.\n";
         std::cout << "1. Merchant\n";
         std::cout << "2. Dungeon\n";
-
+        std::cout << "3. Leave\n";
+        // Get user input
         std::string choice;
         std::cout << "Choose an option: ";
         std::getline(std::cin, choice);
         std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
-
+        // Check user Input
         if (choice == "1" || choice == "merchant") 
         {
             merchantMenu(player);
