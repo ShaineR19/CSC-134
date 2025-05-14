@@ -30,10 +30,14 @@ public:
     void heal(int amount);
     bool isAlive() const;
 
+    void addMoney(int amount) { money += amount; }
+    void subtractMoney(int amount) { money -= amount; }
+
     void addItem(const Item& item);
     void useItem(std::string itemName);
 
     void displayStats() const;
+    void kill() { health = 0; }
 };
 
 #endif

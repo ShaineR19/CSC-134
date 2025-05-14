@@ -63,3 +63,8 @@ void Player::displayStats() const
     std::cout << "HP: " << health << "/" << maxHealth << "\n";
     std::cout << "ATK: " << attack << " | DEF: " << defense << "\n";
 }
+
+void Player::kill() 
+{
+    health = 0; // Used to end the game
+}

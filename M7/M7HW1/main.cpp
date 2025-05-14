@@ -78,7 +78,7 @@ void outsideMenu(Player& player)
         else if (choice == "3" || choice == "leave") 
         {
             std::cout << "You leave the game.\n";
-            player.takeDamage(100); // Simulate game over
+            player.kill(); // Simulate game over
             outside = false; // Exit the loop
         }
         else
