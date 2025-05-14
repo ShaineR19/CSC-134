@@ -79,7 +79,7 @@ void outsideMenu(Player& player)
         } 
         else if (choice == "3" || choice == "leave") 
         {
-            //player.kill(); // Simulate game over
+            player.kill(); // Simulate game over
             outside = false; // Exit the loop
         }
         else
