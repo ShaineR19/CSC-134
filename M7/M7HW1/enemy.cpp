@@ -24,14 +24,3 @@ bool Enemy::isAlive() const
     return health > 0;
 }
 
-Enemy getRandomEnemy()
-{
-    int r = rand() % 3;
-    switch (r) 
-    {
-        case 0: return Enemy("Goblin", 20, 5, 15);
-        case 1: return Enemy("Skeleton", 20, 10, 10);
-        case 2: return Enemy("Bunny", 20, 20, 5);
-        default: return Enemy("Goblin", 30, 5, 4); // Fallback case
-    }
-}

@@ -19,9 +19,13 @@ void outsideMenu(Player& player);
 void insideMenu(Player& player);
 void merchantMenu(Player& player);
 void battleMenu(Player& player, Enemy& enemy);
+Enemy getRandomEnemy();
 
+// Main function
 int main() 
 {
+    srand(time(0)); // Seed for random number generation
+
     // Create a player
     std::string playerName;
     std::cout << "Enter your character's name: ";
@@ -148,7 +152,6 @@ void insideMenu(Player& player)
 /`    \      /    `\
 )";
             
-
             if (player.isAlive()) 
             {
                 std::cout << "\nYou defeated the " << enemy.getType() << "!\n";
@@ -184,18 +187,20 @@ void battleMenu(Player& player, Enemy& enemy)
 {
     while (player.isAlive() && enemy.isAlive()) 
     {
+        // Display Player stats and enemy health
         std::cout << "\n-- Player Turn --\n";
         player.displayStats();
         std::cout <<"\n"<< enemy.getType() << " HP: " << enemy.getHealth() << "\n";
-
+        // Display Menu
         std::string choice;
         std::cout << "\nBattle Menu:";
         std::cout << "\n1. attack";
         std::cout << "\n2. potion";
         std::cout << "\nChoose an action: ";
+        // Get user input
         std::getline(std::cin, choice);
         std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
-
+        // Check user Input
         if (choice == "1" || choice == "attack") 
         {
             enemy.takeDamage(player.getAttack());
@@ -212,5 +217,17 @@ void battleMenu(Player& player, Enemy& enemy)
 
         std::cout << "\n-- Enemy Turn --\n";
         player.takeDamage(enemy.getAttack());
+    }
+}
+
+Enemy getRandomEnemy()
+{
+    int r = rand() % 3;
+    switch (r) 
+    {
+        case 0: return Enemy("Goblin", 20, 5, 15);
+        case 1: return Enemy("Skeleton", 20, 10, 10);
+        case 2: return Enemy("Bunny", 20, 20, 5);
+        default: return Enemy("Goblin", 30, 5, 4); // Fallback case
     }
 }
