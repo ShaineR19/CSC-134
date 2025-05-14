@@ -32,7 +32,7 @@ public:
 
     void addMoney(int amount) { money += amount; }
     void subtractMoney(int amount);
-
+    void getInventory() const;
     void addItem(const Item& item);
     void useItem(std::string itemName);
 

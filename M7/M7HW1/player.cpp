@@ -81,3 +81,14 @@ void Player::subtractMoney(int amount)
         std::cout << name << " spent " << amount << "g.\n";
     }
 }
+
+void  Player:: getInventory() const 
+{
+    int count = 1;
+    std::cout << "Inventory:\n";
+    for (const auto& item : inventory) 
+    {
+        std::cout << count << "- " << item.getName() << " (" << item.getType() << ")\n";
+        count = count+=1;
+    }
+}

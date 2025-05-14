@@ -176,9 +176,35 @@ void insideMenu(Player& player)
         } 
         else if (dungeonChoice == "2" || dungeonChoice == "inventory") 
         {
-            std::cout << "\nYour Inventory:\n";
-            player.displayStats();
-            continue; // Skip to the next iteration
+            bool go = true;
+            while (go)
+            {
+                // Display Player stats
+                std::cout << "\nYour Inventory:\n";
+                player.displayStats();
+                // Display items
+                std::cout << "\nItems:\n";
+                player.getInventory();
+                // Get user input
+                std::cout << "\nChoose an item to use or type 'leave' to exit: ";
+                std::string itemChoice;
+                std::getline(std::cin, itemChoice);
+                std::transform(itemChoice.begin(), itemChoice.end(), itemChoice.begin(), ::tolower);
+                // Check user Input
+                if (itemChoice == "1" || itemChoice == "healing potion") 
+                {
+                    player.useItem("Healing Potion");
+                } 
+                else if (itemChoice = "2" || itemChoice == "leave")
+                {
+                    std::cout << "You leave the inventory.\n";
+                    go = false; // Exit the loop
+                }
+                else 
+                {
+                    std::cout << "Invalid choice.\n";
+                }
+            }
         } 
         else if (dungeonChoice == "3" || dungeonChoice == "leave") 
         {
