@@ -245,10 +245,10 @@ void battleMenu(Player& player, Enemy& enemy)
         } 
         else if (choice == "2" || choice == "potion") 
         {
-            std::cin.ignore(); // flush newline from previous input
-            std::string itemName;
             std::cout << "Enter item name to use: ";
+            std::string itemName;
             std::getline(std::cin, itemName);
+            std::transform(itemName.begin(), itemName.end(), itemName.begin(), ::tolower);
             player.useItem(itemName);
         }
         if (!enemy.isAlive()) break;
