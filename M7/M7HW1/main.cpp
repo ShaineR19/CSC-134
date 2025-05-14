@@ -2,16 +2,23 @@
 // 5/13/2025
 // M7HW1
 // CSC-134
+// This program is a simple text-based RPG game where the player can explore a dungeon, fight enemies, 
+// and interact with a merchant to buy items. The player can also manage their inventory and use items during battles. 
+// The game includes basic combat mechanics and allows the player to heal using potions. 
+// The code is structured into multiple classes for better organization and readability.
 
+// Libraries
 #include <iostream>
 #include <algorithm>
+// Objects
 #include "Player.h"
 #include "Enemy.h"
 #include "Item.h"
-
+// Functions
 void outsideMenu(Player& player);
 void insideMenu(Player& player);
 void merchantMenu(Player& player);
+void battleMenu(Player& player, Enemy& enemy);
 
 int main() 
 {
@@ -24,14 +31,18 @@ int main()
 
     // Start game
     std::cout << "\nWelcome to the Dungeon Divers!\n";
-
     bool game = true;
     while (game)
     {
         outsideMenu(player);
         insideMenu(player);
+        if (!player.isAlive()) 
+        {
+            std::cout << "\nGame Over! You have been defeated.\n";
+            game = false; // Exit the game loop
+        } 
     }
-
+    std::cout << "\nThank you for playing!\n";
     return 0;
 }
 
@@ -121,9 +132,9 @@ void insideMenu(Player& player)
         if (dungeonChoice == "1" || dungeonChoice == "explore")
         {
             // Create Enemies
-            Enemy goblin("Goblin", 30, 8, 2);
+            Enemy enemy = getRandomEnemy();
             
-            std::cout << "\nA wild " << goblin.getType() << " appears!\n";
+            std::cout << "\nA wild " << enemy.getType() << " appears!\n";
             std::cout << R"(
       ,      ,
      /(.-""-.)\
@@ -136,37 +147,7 @@ void insideMenu(Player& player)
   ___\ \|--|/ /___
 /`    \      /    `\
 )";
-            while (player.isAlive() && goblin.isAlive()) 
-            {
-                std::cout << "\n-- Player Turn --\n";
-                player.displayStats();
-                std::cout <<"\n"<< goblin.getType() << " HP: " << goblin.getHealth() << "\n";
-
-                std::string choice;
-                std::cout << "\nBattle Menu:";
-                std::cout << "\n1. attack";
-                std::cout << "\n2. potion";
-                std::cout << "\nChoose an action: ";
-                std::getline(std::cin, choice);
-                std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
-
-                if (choice == "1" || choice == "attack") 
-                {
-                    goblin.takeDamage(player.getAttack());
-                } 
-                else if (choice == "2" || choice == "potion") 
-                {
-                    std::cin.ignore(); // flush newline from previous input
-                    std::string itemName;
-                    std::cout << "Enter item name to use: ";
-                    std::getline(std::cin, itemName);
-                    player.useItem(itemName);
-                }
-                if (!goblin.isAlive()) break;
-
-                std::cout << "\n-- Enemy Turn --\n";
-                player.takeDamage(goblin.getAttack());
-            }
+            
 
             if (player.isAlive()) 
             {
@@ -196,4 +177,40 @@ void insideMenu(Player& player)
         }
     }
     return;
+}
+
+// Function to handle battle menu
+void battleMenu(Player& player, Enemy& enemy)
+{
+    while (player.isAlive() && goblin.isAlive()) 
+    {
+        std::cout << "\n-- Player Turn --\n";
+        player.displayStats();
+        std::cout <<"\n"<< goblin.getType() << " HP: " << goblin.getHealth() << "\n";
+
+        std::string choice;
+        std::cout << "\nBattle Menu:";
+        std::cout << "\n1. attack";
+        std::cout << "\n2. potion";
+        std::cout << "\nChoose an action: ";
+        std::getline(std::cin, choice);
+        std::transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
+
+        if (choice == "1" || choice == "attack") 
+        {
+            goblin.takeDamage(player.getAttack());
+        } 
+        else if (choice == "2" || choice == "potion") 
+        {
+            std::cin.ignore(); // flush newline from previous input
+            std::string itemName;
+            std::cout << "Enter item name to use: ";
+            std::getline(std::cin, itemName);
+            player.useItem(itemName);
+        }
+        if (!goblin.isAlive()) break;
+
+        std::cout << "\n-- Enemy Turn --\n";
+        player.takeDamage(goblin.getAttack());
+    }
 }
