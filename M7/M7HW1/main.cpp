@@ -39,6 +39,11 @@ int main()
     while (game)
     {
         outsideMenu(player);
+        if (!player.isAlive()) 
+        {
+            std::cout << "\nYou have the left the treasure and riches in the dungeon...\n";
+            game = false; // Exit the game loop
+        } 
         insideMenu(player);
         if (!player.isAlive()) 
         {
@@ -77,7 +82,6 @@ void outsideMenu(Player& player)
         } 
         else if (choice == "3" || choice == "leave") 
         {
-            std::cout << "You leave the game.\n";
             player.kill(); // Simulate game over
             outside = false; // Exit the loop
         }
