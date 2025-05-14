@@ -233,7 +233,7 @@ void battleMenu(Player& player, Enemy& enemy)
         std::string choice;
         std::cout << "\nBattle Menu:";
         std::cout << "\n1. attack";
-        std::cout << "\n2. potion";
+        std::cout << "\n2. healing potion";
         std::cout << "\nChoose an action: ";
         // Get user input
         std::getline(std::cin, choice);
@@ -243,13 +243,14 @@ void battleMenu(Player& player, Enemy& enemy)
         {
             enemy.takeDamage(player.getAttack());
         } 
-        else if (choice == "2" || choice == "potion") 
+        else if (choice == "2" || choice == "healing potion") 
         {
-            std::cout << "Enter item name to use: ";
-            std::string itemName;
-            std::getline(std::cin, itemName);
-            std::transform(itemName.begin(), itemName.end(), itemName.begin(), ::tolower);
+            std::string itemName = "Healing Potion"; // Assuming the player has a healing potion
             player.useItem(itemName);
+        }
+        else 
+        {
+            std::cout << "Invalid choice.\n";
         }
         if (!enemy.isAlive()) break;
 
