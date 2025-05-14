@@ -73,7 +73,13 @@ void outsideMenu(Player& player)
             std::cout << "You have chosen to go to the dungeon.\n";
             outside = false; // Exit the loop to enter the dungeon
         } 
-        else 
+        else if (choice == "3" || choice == "leave") 
+        {
+            std::cout << "You leave the game.\n";
+            player.takeDamage(100); // Simulate game over
+            outside = false; // Exit the loop
+        }
+        else
         {
             std::cout << "Invalid choice.\n";
         }
