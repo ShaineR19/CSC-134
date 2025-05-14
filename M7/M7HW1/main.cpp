@@ -20,6 +20,9 @@ void insideMenu(Player& player);
 void merchantMenu(Player& player);
 void battleMenu(Player& player, Enemy& enemy);
 Enemy getRandomEnemy();
+void goblinArt();
+void skeletonArt();
+void bunnyArt();
 
 // Main function
 int main() 
