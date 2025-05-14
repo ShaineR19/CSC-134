@@ -30,7 +30,7 @@ public:
     void heal(int amount);
     bool isAlive() const;
 
-    void addMoney(int amount) { money += amount; }
+    void addMoney(int amount);
     void subtractMoney(int amount);
     void getInventory() const;
     void addItem(const Item& item);

@@ -62,6 +62,7 @@ void Player::displayStats() const
     std::cout << "== " << name << " ==\n";
     std::cout << "HP: " << health << "/" << maxHealth << "\n";
     std::cout << "ATK: " << attack << " | DEF: " << defense << "\n";
+    std::cout << "Money: " << money << "g\n";
 }
 
 void Player::kill() 
@@ -80,6 +81,12 @@ void Player::subtractMoney(int amount)
         money -= amount;
         std::cout << name << " spent " << amount << "g.\n";
     }
+}
+
+void Player::addMoney(int amount) 
+{
+    money += amount;
+    std::cout << "You received " << amount << "g.\n";
 }
 
 void  Player::getInventory() const 

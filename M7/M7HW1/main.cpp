@@ -229,8 +229,11 @@ void battleMenu(Player& player, Enemy& enemy)
         {
             std::cout << "Invalid choice.\n";
         }
-        if (!enemy.isAlive()) break;
-
+        if (!enemy.isAlive()) 
+        {
+            player.addMoney(20);
+            break;
+        }
         std::cout << "\n-- Enemy Turn --\n";
         player.takeDamage(enemy.getAttack());
     }
