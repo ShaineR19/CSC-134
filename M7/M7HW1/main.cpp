@@ -151,7 +151,7 @@ void insideMenu(Player& player)
 
             if (player.isAlive()) 
             {
-                std::cout << "\nYou defeated the " << goblin.getType() << "!\n";
+                std::cout << "\nYou defeated the " << enemy.getType() << "!\n";
             } 
             else 
             {
@@ -182,11 +182,11 @@ void insideMenu(Player& player)
 // Function to handle battle menu
 void battleMenu(Player& player, Enemy& enemy)
 {
-    while (player.isAlive() && goblin.isAlive()) 
+    while (player.isAlive() && enemy.isAlive()) 
     {
         std::cout << "\n-- Player Turn --\n";
         player.displayStats();
-        std::cout <<"\n"<< goblin.getType() << " HP: " << goblin.getHealth() << "\n";
+        std::cout <<"\n"<< enemy.getType() << " HP: " << enemy.getHealth() << "\n";
 
         std::string choice;
         std::cout << "\nBattle Menu:";
@@ -198,7 +198,7 @@ void battleMenu(Player& player, Enemy& enemy)
 
         if (choice == "1" || choice == "attack") 
         {
-            goblin.takeDamage(player.getAttack());
+            enemy.takeDamage(player.getAttack());
         } 
         else if (choice == "2" || choice == "potion") 
         {
@@ -208,9 +208,9 @@ void battleMenu(Player& player, Enemy& enemy)
             std::getline(std::cin, itemName);
             player.useItem(itemName);
         }
-        if (!goblin.isAlive()) break;
+        if (!enemy.isAlive()) break;
 
         std::cout << "\n-- Enemy Turn --\n";
-        player.takeDamage(goblin.getAttack());
+        player.takeDamage(enemy.getAttack());
     }
 }
