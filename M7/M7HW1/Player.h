@@ -31,7 +31,7 @@ public:
     bool isAlive() const;
 
     void addMoney(int amount) { money += amount; }
-    void subtractMoney(int amount) { money -= amount; }
+    void subtractMoney(int amount);
 
     void addItem(const Item& item);
     void useItem(std::string itemName);

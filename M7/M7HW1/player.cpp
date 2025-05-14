@@ -68,3 +68,16 @@ void Player::kill()
 {
     health = 0; // Used to end the game
 }
+
+void Player::subtractMoney(int amount) 
+{
+    if (amount > money) 
+    {
+        std::cout << "Not enough money!\n";
+    } 
+    else 
+    {
+        money -= amount;
+        std::cout << name << " spent " << amount << "g.\n";
+    }
+}

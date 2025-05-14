@@ -105,8 +105,17 @@ void merchantMenu(Player& player)
         // subtract money from player here
         if (merchantChoice == "1" || merchantChoice == "healing potion") 
         {
-            player.addItem(Item("Healing Potion", "potion", 20));
-            std::cout << "You bought a healing potion!\n";
+            if (player.getMoney() >= 20) 
+            {
+                player.addItem(Item("Healing Potion", "potion", 20));
+                player.subtractMoney(20);
+                std::cout << "You bought a healing potion!\n";
+            }
+            else if (player.getMoney() < 20) 
+            {
+                std::cout << "You don't have enough money!\n";
+                continue; // Skip to the next iteration
+            }
         } 
         else if (merchantChoice == "2" || merchantChoice == "leave")
         {
@@ -141,23 +150,12 @@ void insideMenu(Player& player)
         // Check user Input
         if (dungeonChoice == "1" || dungeonChoice == "explore")
         {
-            // Create Enemies
+            // Create Enemy
             Enemy enemy = getRandomEnemy();
-            
             std::cout << "\nA wild " << enemy.getType() << " appears!\n";
-            std::cout << R"(
-      ,      ,
-     /(.-""-.)\
-|\   \/      \/   /|
-| \  / =.  .= \  / |
- \ ( \  o\/o  / ) /
-  \_, '-/  \-' ,_/
-    /   \__/   \
-    \ \__/\__/ /
-  ___\ \|--|/ /___
-/`    \      /    `\
-)";
-            
+            // Start Battle
+            battleMenu(player, enemy);
+            // Check if player is alive after battle
             if (player.isAlive()) 
             {
                 std::cout << "\nYou defeated the " << enemy.getType() << "!\n";
@@ -231,9 +229,66 @@ Enemy getRandomEnemy()
     int r = rand() % 3;
     switch (r) 
     {
-        case 0: return Enemy("Goblin", 20, 5, 15);
-        case 1: return Enemy("Skeleton", 20, 10, 10);
-        case 2: return Enemy("Bunny", 20, 20, 5);
-        default: return Enemy("Goblin", 30, 5, 4); // Fallback case
+        case 0:
+            goblinArt();
+            std::cout << "\nA wild Goblin appears!\n";
+            return Enemy("Goblin", 20, 5, 15);
+        case 1:
+            skeletonArt();
+            std::cout << "\nA wild Skeleton appears!\n";
+            return Enemy("Skeleton", 20, 10, 10);
+        case 2:
+            bunnyArt();
+            std::cout << "\nA wild Bunny appears!\n";
+            return Enemy("Bunny", 20, 20, 5);
+        default:
+            goblinArt();
+            std::cout << "\nA wild Goblin appears!\n";
+            return Enemy("Goblin", 20, 5, 15); // Fallback case
     }
+}
+
+void goblinArt()
+{
+std::cout << R"(
+      ,      ,
+     /(.-""-.)\
+|\   \/      \/   /|
+| \  / =.  .= \  / |
+ \ ( \  o\/o  / ) /
+  \_, '-/  \-' ,_/
+    /   \__/   \
+    \ \__/\__/ /
+  ___\ \|--|/ /___
+/`    \      /    `\
+)";
+}
+
+void skeletonArt()
+{
+std::cout << R"(
+     .-.
+    (o.o)
+     |=|
+    __|__
+  //.=|=.\\
+ // .=|=. \\
+ \\ .=|=. //
+  \\(_=_)//
+   (:| |:)
+    || ||
+    () ()
+    || ||
+    || ||
+   ==' '==
+)";
+}
+
+void bunnyArt()
+{
+std::cout << R"(
+(\(\ 
+( -.-)
+ o_(")(")
+)";
 }
