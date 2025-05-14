@@ -37,7 +37,7 @@ public:
     void useItem(std::string itemName);
 
     void displayStats() const;
-    void kill()
+    void kill();
 };
 
 #endif
