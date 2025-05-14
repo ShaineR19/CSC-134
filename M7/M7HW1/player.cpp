@@ -4,10 +4,10 @@
 Player::Player(std::string playerName) 
 {
     name = playerName;
-    maxHealth = 10;
+    maxHealth = 50;
     health = maxHealth;
     attack = 10;
-    defense = 10;
+    defense = 4;
     money = 100;
 }
 

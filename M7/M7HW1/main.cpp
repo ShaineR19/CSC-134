@@ -79,7 +79,7 @@ void outsideMenu(Player& player)
         } 
         else if (choice == "3" || choice == "leave") 
         {
-            player.kill(); // Simulate game over
+            //player.kill(); // Simulate game over
             outside = false; // Exit the loop
         }
         else
@@ -155,7 +155,6 @@ void insideMenu(Player& player)
         {
             // Create Enemy
             Enemy enemy = getRandomEnemy();
-            std::cout << "\nA wild " << enemy.getType() << " appears!\n";
             // Start Battle
             battleMenu(player, enemy);
             // Check if player is alive after battle
