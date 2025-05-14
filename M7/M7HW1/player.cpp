@@ -82,7 +82,7 @@ void Player::subtractMoney(int amount)
     }
 }
 
-void  Player:: getInventory() const 
+void  Player::getInventory() const 
 {
     int count = 1;
     std::cout << "Inventory:\n";

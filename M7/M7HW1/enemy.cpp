@@ -3,8 +3,11 @@
 #include <cstdlib>
 #include <ctime>
 
-Enemy::Enemy(std::string enemyType, int hp, int atk, int def)
-    : type(enemyType), health(hp), attack(atk), defense(def) {}
+Enemy::Enemy(std::string enemyType, int hp, int atk, int def): 
+    type(enemyType), 
+    health(hp), 
+    attack(atk), 
+    defense(def) {}
 
 std::string Enemy::getType() const { return type; }
 int Enemy::getHealth() const { return health; }

@@ -195,7 +195,7 @@ void insideMenu(Player& player)
                 {
                     player.useItem("Healing Potion");
                 } 
-                else if (itemChoice = "2" || itemChoice == "leave")
+                else if (itemChoice == "2" || itemChoice == "leave")
                 {
                     std::cout << "You leave the inventory.\n";
                     go = false; // Exit the loop
@@ -275,6 +275,9 @@ Enemy getRandomEnemy()
             bunnyArt();
             std::cout << "\nA wild Bunny appears!\n";
             return Enemy("Bunny", 20, 20, 2);
+        default:
+            std::cout << "\nA wild Goblin appears\n";
+            return Enemy("Goblin", 20, 5, 6); // Default enemy
     }
 }
 
