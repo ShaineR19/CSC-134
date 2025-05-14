@@ -88,7 +88,6 @@ void  Player::getInventory() const
     std::cout << "Inventory:\n";
     for (const auto& item : inventory) 
     {
-        std::cout << count << "- " << item.getName() << " (" << item.getType() << ")\n";
-        count = count+=1;
+        std::cout << count++ << "- " << item.getName() << " (" << item.getType() << ")\n";
     }
 }
