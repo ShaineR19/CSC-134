@@ -14,11 +14,12 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Item.h"
-// Functions
+// Menu Functions
 void outsideMenu(Player& player);
 void insideMenu(Player& player);
 void merchantMenu(Player& player);
 void battleMenu(Player& player, Enemy& enemy);
+// Enemy Functions
 Enemy getRandomEnemy();
 void goblinArt();
 void skeletonArt();
@@ -57,6 +58,11 @@ void outsideMenu(Player& player)
     bool outside = true;
     while (outside)
     {
+        if (!player.isAlive()) 
+        {
+            std::cout << "\nYou have been defeated...\n";
+            outside = false; // Exit the loop
+        }
         // Display Menu
         std::cout << "\nYou are outside of the dungeon.\n";
         std::cout << "1. Merchant\n";
@@ -243,10 +249,6 @@ Enemy getRandomEnemy()
             bunnyArt();
             std::cout << "\nA wild Bunny appears!\n";
             return Enemy("Bunny", 20, 20, 2);
-        default:
-            goblinArt();
-            std::cout << "\nA wild Goblin appears!\n";
-            return Enemy("Goblin", 20, 5, 15); // Fallback case
     }
 }
 
