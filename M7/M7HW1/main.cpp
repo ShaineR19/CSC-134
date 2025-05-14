@@ -235,15 +235,15 @@ Enemy getRandomEnemy()
         case 0:
             goblinArt();
             std::cout << "\nA wild Goblin appears!\n";
-            return Enemy("Goblin", 20, 5, 15);
+            return Enemy("Goblin", 20, 5, 6);
         case 1:
             skeletonArt();
             std::cout << "\nA wild Skeleton appears!\n";
-            return Enemy("Skeleton", 20, 10, 10);
+            return Enemy("Skeleton", 20, 10, 4);
         case 2:
             bunnyArt();
             std::cout << "\nA wild Bunny appears!\n";
-            return Enemy("Bunny", 20, 20, 5);
+            return Enemy("Bunny", 20, 20, 2);
         default:
             goblinArt();
             std::cout << "\nA wild Goblin appears!\n";
@@ -290,8 +290,8 @@ std::cout << R"(
 void bunnyArt()
 {
 std::cout << R"(
-(\(\ 
-( -.-)
+(/(/
+(-.-)
  o_(")(")
 )";
 }
