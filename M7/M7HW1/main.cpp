@@ -43,13 +43,7 @@ int main()
         {
             std::cout << "\nYou have the left the treasure and riches in the dungeon...\n";
             game = false; // Exit the game loop
-        } 
-        insideMenu(player);
-        if (!player.isAlive()) 
-        {
-            std::cout << "\nGame Over! You have been defeated.\n";
-            game = false; // Exit the game loop
-        } 
+        }
     }
     std::cout << "\nThank you for playing!\n";
     return 0;
@@ -78,7 +72,7 @@ void outsideMenu(Player& player)
         else if (choice == "2" || choice == "dungeon") 
         {
             std::cout << "You have chosen to go to the dungeon.\n";
-            outside = false; // Exit the loop to enter the dungeon
+            insideMenu(player);
         } 
         else if (choice == "3" || choice == "leave") 
         {
